@@ -29,7 +29,7 @@ public class EventoControllerTest {
 
     @Test
     public void obtenerTodosConHATEOASTest() throws Exception {
-        // Arrange
+        
         Evento evento1 = new Evento();
         evento1.setId(1L);
         evento1.setNombre("Campaña de vacunación");
