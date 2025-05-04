@@ -1,5 +1,7 @@
 package com.example.eventos_vet.model;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +15,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "evento")
-public class Evento {
+public class Evento extends RepresentationModel<Evento> {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)        
         @Column(name = "id")        
