@@ -1,0 +1,3 @@
+com\example\eventos_vet\EventosVetApplicationTests.class
+com\example\eventos_vet\repository\EventoRepositoryTest.class
+com\example\eventos_vet\controller\EventoControllerTest.class
