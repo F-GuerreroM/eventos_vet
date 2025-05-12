@@ -55,4 +55,15 @@ public class EventoControllerTest {
             .andExpect(jsonPath("$._embedded.eventoList[0]._links.self.href", Matchers.containsString("/eventos/1")))
             .andExpect(jsonPath("$._links.self.href", Matchers.containsString("/eventos")));
     }
+
+    @Test
+    public void obtenerEventoNoExistenteTest() throws Exception {
+        // Simulamos que no existe el evento con ID 99
+        when(eventoService.getEventoById(99L)).thenReturn(null);
+
+        // Act & Assert
+        mockMvc.perform(get("/eventos/99").accept(MediaTypes.HAL_JSON))
+            .andExpect(status().isNotFound())
+            .andExpect(jsonPath("$.error", Matchers.is("Evento no encontrado")));
+    }
 }
